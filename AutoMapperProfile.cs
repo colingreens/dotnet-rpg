@@ -1,12 +1,15 @@
+using dotnet_rpg.Dto.Weapon;
+
 namespace dotnet_rpg
 {
-  public class AutoMapperProfile : Profile
-  {
-    public AutoMapperProfile()
+    public class AutoMapperProfile : Profile
     {
-      CreateMap<Character, GetCharacterDto>();
-      CreateMap<AddCharacterDto, Character>();
-      CreateMap<UpdateCharacterDto, Character>();
+        public AutoMapperProfile()
+        {
+            CreateMap<Character, GetCharacterDto>();
+            CreateMap<AddCharacterDto, Character>();
+            CreateMap<UpdateCharacterDto, Character>();
+            CreateMap<Weapon, GetWeaponDto>();
+        }
     }
-  }
 }
