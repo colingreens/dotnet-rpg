@@ -17,8 +17,7 @@ namespace dotnet_rpg.Controllers
         [HttpGet("GetAll")]
         public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> Get()
         {
-            int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)!.Value);
-            return Ok(await _characterService.GetAllCharacters(userId));
+            return Ok(await _characterService.GetAllCharacters());
         }
 
         [HttpGet("{id}")]
@@ -40,7 +39,7 @@ namespace dotnet_rpg.Controllers
 
             if (response.Data is null)
                 return NotFound(response);
-            return Ok();
+            return Ok(response);
         }
 
         [HttpDelete("{id}")]

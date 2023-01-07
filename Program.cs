@@ -22,7 +22,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
     {
-        Description = """Stand Authorization header using the Bearer scheme. Example: "bearer {token}" """,
+        Description = """Stand Authorization header using the Bearer scheme. Example: "Bearer {token}" """,
         In = ParameterLocation.Header,
         Name = "Authorization",
         Type = SecuritySchemeType.ApiKey
@@ -44,6 +44,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
           ValidateAudience = false
       };
   });
+
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
