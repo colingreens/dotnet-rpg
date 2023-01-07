@@ -1,3 +1,4 @@
+using dotnet_rpg.Dto.Fight;
 using dotnet_rpg.Dto.Skill;
 using dotnet_rpg.Dto.Weapon;
 
@@ -12,6 +13,7 @@ namespace dotnet_rpg
             CreateMap<UpdateCharacterDto, Character>();
             CreateMap<Weapon, GetWeaponDto>();
             CreateMap<Skill, GetSkillDto>();
+            CreateMap<Character, HighScoreDto>();
         }
     }
 }
